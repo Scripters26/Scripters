@@ -2505,10 +2505,12 @@ function initTeamExperience() {
     for (let y = 1; y < sampleH - 1; y += step) {
       for (let x = 1; x < sampleW - 1; x += step) {
         const p = (Math.floor(y) * sampleW + Math.floor(x)) * 4;
+        const a = data[p + 3] / 255;
+        if (a < 0.08) continue;
         const r = data[p], g = data[p + 1], b = data[p + 2];
         const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
         const chroma = (b - r) / 255;
-        const visibility = Math.max(0, Math.min(1, (lum - 0.055) * 1.65));
+        const visibility = Math.max(0, Math.min(1, (lum - 0.055) * 1.65)) * a;
         if (visibility < 0.035) continue;
         const radius = dot * (0.28 + visibility * 0.85);
         const px = dx + (x / sampleW) * dw, py = dy + (y / sampleH) * dh;

@@ -1,7 +1,6 @@
 node_modules
 bun.lock
 .env*
-metadata.json
 public/.nojekyll
 public/CNAME
 public/index.html

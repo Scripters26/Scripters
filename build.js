@@ -23,10 +23,9 @@ for (const file of jsFiles) {
   }
 }
 
-// Start with a clean production directory (preserving pre-existing public/assets).
+// Start with a clean production directory.
 fs.mkdirSync(publicDir, { recursive: true });
 for (const entry of fs.readdirSync(publicDir)) {
-  if (entry === 'assets') continue;
   fs.rmSync(path.join(publicDir, entry), { recursive: true, force: true });
 }
 
