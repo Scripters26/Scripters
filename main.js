@@ -1094,6 +1094,30 @@ function initWork() {
       svgA.style.top = Math.round(aTop - mainTop) + "px";
       const pts = buildWaypoints(mobile, H);
       A = place(svgA, W, H, pts, sw);
+      const maskEl = svgA.querySelector("#mLineATeam");
+      const maskBg = svgA.querySelector("#mLineABg");
+      const maskCut = svgA.querySelector("#mLineACut");
+      if (maskEl) {
+        maskEl.setAttribute("width", String(W));
+        maskEl.setAttribute("height", String(H));
+      }
+      if (maskBg) {
+        maskBg.setAttribute("width", String(W));
+        maskBg.setAttribute("height", String(H));
+      }
+      if (maskCut && team) {
+        const teamEl = document.getElementById("team-canvas") || team;
+        const teamSmall = window.matchMedia("(max-width: 760px)").matches;
+        const teamW = teamEl.clientWidth || W;
+        const teamH = teamEl.clientHeight || team.offsetHeight || window.innerHeight;
+        const teamTopInSvg = abs(teamEl) - aTop;
+        const targetW = Math.min(teamW * (teamSmall ? 0.88 : 0.62), teamSmall ? 520 : 790);
+        const targetH = teamH * (teamSmall ? 0.65 : 0.82);
+        maskCut.setAttribute("cx", (teamW * (teamSmall ? 0.5 : 0.52)).toFixed(1));
+        maskCut.setAttribute("cy", (teamTopInSvg + teamH * 0.48).toFixed(1));
+        maskCut.setAttribute("rx", (targetW * 0.58).toFixed(1));
+        maskCut.setAttribute("ry", (targetH * 0.60).toFixed(1));
+      }
       if (calm) {
         setRibbonOffset(A, 0);
       } else {
@@ -2532,22 +2556,6 @@ function initTeamExperience() {
 
   function drawDigitalBackground(t) {
     ctx.clearRect(0, 0, w, h);
-    const activeCache = portraitCache[state.to] || portraitCache.find(Boolean);
-    const px = activeCache ? activeCache.dx + activeCache.dw * 0.5 : w * (small ? 0.5 : 0.52);
-    const py = activeCache ? activeCache.dy + activeCache.dh * 0.48 : h * 0.48;
-    const rx = (activeCache ? activeCache.dw : Math.min(w * (small ? 0.88 : 0.62), small ? 520 : 790)) * 0.58;
-    const ry = (activeCache ? activeCache.dh : h * (small ? 0.65 : 0.82)) * 0.56;
-    ctx.save();
-    ctx.translate(px, py);
-    ctx.scale(Math.max(1, rx), Math.max(1, ry));
-    const shield = ctx.createRadialGradient(0, 0, 0, 0, 0, 1);
-    shield.addColorStop(0, "rgba(3,7,18,.96)");
-    shield.addColorStop(0.45, "rgba(3,7,18,.92)");
-    shield.addColorStop(0.76, "rgba(3,7,18,.52)");
-    shield.addColorStop(1, "rgba(3,7,18,0)");
-    ctx.fillStyle = shield;
-    ctx.fillRect(-1, -1, 2, 2);
-    ctx.restore();
     const glow = ctx.createRadialGradient(w * 0.56, h * 0.49, 10, w * 0.56, h * 0.49, Math.max(w, h) * 0.62);
     glow.addColorStop(0, "rgba(234,228,216,.045)"); glow.addColorStop(1, "rgba(3,7,18,0)");
     ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
@@ -2564,6 +2572,33 @@ function initTeamExperience() {
         ctx.fillText(ch, c.x, yy);
       }
     });
+    ctx.restore();
+    drawContours(t, 0.56);
+    // Erase background glyphs & contour lines behind the human portrait and softly at top/bottom edges
+    const activeCache = portraitCache[state.to] || portraitCache.find(Boolean);
+    const dw = activeCache ? activeCache.dw : Math.min(w * (small ? 0.88 : 0.62), small ? 520 : 790);
+    const dh = activeCache ? activeCache.dh : h * (small ? 0.65 : 0.82);
+    const px = activeCache ? activeCache.dx + dw * 0.5 : w * (small ? 0.5 : 0.52);
+    const py = activeCache ? activeCache.dy + dh * 0.5 : h * 0.48;
+    ctx.save();
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.save();
+    ctx.translate(px, py);
+    ctx.scale(Math.max(1, dw * 0.62), Math.max(1, dh * 0.60));
+    const cutout = ctx.createRadialGradient(0, 0, 0, 0, 0, 1);
+    cutout.addColorStop(0, "rgba(0,0,0,1)");
+    cutout.addColorStop(0.72, "rgba(0,0,0,1)");
+    cutout.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = cutout;
+    ctx.fillRect(-1, -1, 2, 2);
+    ctx.restore();
+    const edgeFade = ctx.createLinearGradient(0, 0, 0, h);
+    edgeFade.addColorStop(0, "rgba(0,0,0,1)");
+    edgeFade.addColorStop(0.18, "rgba(0,0,0,0)");
+    edgeFade.addColorStop(0.82, "rgba(0,0,0,0)");
+    edgeFade.addColorStop(1, "rgba(0,0,0,1)");
+    ctx.fillStyle = edgeFade;
+    ctx.fillRect(0, 0, w, h);
     ctx.restore();
   }
 
@@ -2655,17 +2690,6 @@ function initTeamExperience() {
     } else {
       drawPortrait(state.to, 1, now);
     }
-    drawContours(now, 0.56);
-    // Seamless top/bottom dissolve into the unified site silk canvas
-    ctx.save();
-    ctx.globalCompositeOperation = "destination-out";
-    const edgeFade = ctx.createLinearGradient(0, 0, 0, h);
-    edgeFade.addColorStop(0, "rgba(0,0,0,1)");
-    edgeFade.addColorStop(0.22, "rgba(0,0,0,0)");
-    edgeFade.addColorStop(0.78, "rgba(0,0,0,0)");
-    edgeFade.addColorStop(1, "rgba(0,0,0,1)");
-    ctx.fillStyle = edgeFade; ctx.fillRect(0, 0, w, h);
-    ctx.restore();
     syncTeamUI(targetPerson);
     if (!reduced && teamVisible && !raf) {
       raf = requestAnimationFrame(loop);
