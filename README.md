@@ -1,11 +1,26 @@
-<div align="center">
+# Scripters
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Creative & Digital Engineering Studio — Custom Web Applications, Interactive WebGL Experiences, Data Pipelines, and Brand Systems.
 
-  <h1>Built with AI Studio</h2>
+## Overview
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+Portfolio and digital showcase for **Scripters**, featuring:
+- Scroll-driven canvas frame sequences and custom WebGL2 shader cards
+- Smooth inertial scrolling with Lenis and GSAP ScrollTrigger
+- Interactive project filtering, layout switching, and inline PDF poster viewer
+- Real-time canvas point-cloud founder portraits
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Local Development
 
-</div>
+```bash
+npm install
+npm run dev
+```
+
+The server starts on `http://localhost:3000`.
+
+## Production Build
+
+```bash
+npm run build
+```

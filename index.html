@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scripters — Creative Digital Agency</title>
+<meta name="description" content="Creative digital agency portfolio featuring scroll-driven frame sequence animation, digital marketing, banner design, web development, and AI reels.">
+<meta property="og:title" content="Scripters — Creative Digital Agency">
+<meta property="og:description" content="Creative digital agency portfolio featuring scroll-driven frame sequence animation, digital marketing, banner design, web development, and AI reels.">
+<link rel="icon" type="image/png" href="assets/scripters-logo-white.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><div class="ld-word"><img class="ld-logo" src="assets/scripters-logo-white.png" alt="Scripters" width="287" height="308" decoding="sync"></div><div class="ld-pct"><span id="pct">0</span>%</div></div>
+
+<header class="nav">
+  <a href="#top" class="logo" aria-label="Scripters home"><img class="logo-img" src="assets/scripters-logo-white.png" alt="Scripters" width="287" height="308" decoding="sync"></a>
+  <nav><a href="#services">Services</a><a href="#work">Work</a><a href="#brands">Clients</a><a href="#team">Team</a><a href="#contact" class="pill">Let’s talk</a></nav>
+</header>
+
+<main id="top">
+  <section id="story">
+    <div class="stage">
+      <canvas id="cv"></canvas>
+      <div class="vignette"></div>
+
+      <div class="beat" data-in="0" data-out="0.22" data-fade-out="0.09">
+        <h1 class="hero-word"><span class="sr">S</span><img class="hero-s-logo" src="assets/scripters-logo-white.png" alt="" aria-hidden="true" width="287" height="308" decoding="sync"><span>cripters</span></h1><p>Marketing · Design · Web · AI Reels</p><span class="hint">Scroll to enter</span>
+      </div>
+      <div class="beat" data-in="0.28" data-out="0.68" data-fade-in="0.16" data-fade-out="0.14" data-still="1"><h2>Step into<br><em>the code</em></h2></div>
+      <div class="beat" data-in="0.76" data-out="9" data-fade-in="0.24" data-still="1"><h2 class="big">Work<br><em>with us</em></h2>
+        <a class="cta" href="mailto:scripterscreation@gmail.com">Start a project →</a></div>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+  </section>
+
+  <section id="services" class="wrap">
+    <p class="eyebrow">What we do</p>
+    <ul class="services">
+      <li><span>01</span><b>Digital Marketing</b><em>Campaigns that convert</em></li>
+      <li><span>02</span><b>Banner Designing</b><em>Scroll-stopping creatives</em></li>
+      <li><span>03</span><b>Web Development</b><em>Fast, animated, memorable sites</em></li>
+      <li><span>04</span><b>AI Reels</b><em>Short-form video, AI-powered</em></li>
+      <li><span>05</span><b>Social Media Posts</b><em>A feed with a point of view</em></li>
+    </ul>
+  </section>
+
+  <section id="work" aria-labelledby="work-title">
+
+    <header class="work-head">
+      <div class="work-tagline-strip">
+        <span class="work-tag-label">Selected Works · 2024–2026</span>
+        <span class="work-tag-badge">Studio Portfolio</span>
+      </div>
+
+      <h2 class="work-title" id="work-title"><span class="wm"><span class="wi">Featured</span></span> <span class="wm"><span class="wi is-italic">Work</span></span></h2>
+
+      <div class="work-side">
+        <p class="work-intro">Scripters is an independent creative technology studio. We engineer custom web applications, autonomous agentic systems, and high-performance data workflows with zero compromise on craft.</p>
+        <ul class="work-caps" aria-label="Capabilities">
+          <li>Custom Website Development</li>
+          <li>Web Application Development</li>
+          <li>UI/UX and Interactive Web Experiences</li>
+          <li>AI Engineering and Agentic AI</li>
+          <li>Data Analytics and Business Intelligence</li>
+          <li>Data Scraping and Data Cleaning</li>
+          <li>Python Automation and Excel Automation</li>
+          <li>Social Media Banners, Posters &amp; Brand Design</li>
+        </ul>
+      </div>
+
+      <div class="work-controls-bar">
+        <div class="work-filter-tabs" role="tablist" aria-label="Filter works by discipline">
+          <span class="filter-hover-bg" aria-hidden="true"></span>
+          <span class="filter-pill-bg" aria-hidden="true"></span>
+          <button class="filter-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all"><span class="tab-label">All Works</span> <span class="tab-badge">08</span></button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="web"><span class="tab-label">Web &amp; UI/UX</span> <span class="tab-badge">03</span></button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="ai"><span class="tab-label">Agentic AI</span> <span class="tab-badge">01</span></button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="data"><span class="tab-label">Data &amp; Python</span> <span class="tab-badge">01</span></button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="design"><span class="tab-label">Design &amp; Posters</span> <span class="tab-badge">03</span></button>
+        </div>
+        <div class="work-view-toggle" role="group" aria-label="Toggle layout mode">
+          <button class="view-btn" type="button" data-view="grid" title="Editorial Bento Grid View" aria-label="Bento Grid View">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>
+          </button>
+          <button class="view-btn is-active" type="button" data-view="showcase" title="Expanded Showcase View" aria-label="Expanded Showcase View">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="2" width="14" height="4.5" rx="1.5"/><rect x="1" y="9.5" width="14" height="4.5" rx="1.5"/></svg>
+          </button>
+        </div>
+        <span class="work-counter-stat" aria-live="polite">Showing <b id="work-visible-count">8</b> of 8 Works</span>
+      </div>
+    </header>
+
+    <div class="work-ticker-wrap" aria-hidden="true">
+      <div class="work-ticker">
+        <span class="ticker-item">Bespoke Web Development</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Social Media Banners &amp; Posters</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Agentic AI & Multi-Agent Swarms</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Interactive Web Experiences</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Python Automation & ETL Pipelines</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Business Intelligence & SQL Dashboards</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Bespoke Web Development</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Social Media Banners &amp; Posters</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Agentic AI & Multi-Agent Swarms</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Interactive Web Experiences</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Python Automation & ETL Pipelines</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-item">Business Intelligence & SQL Dashboards</span>
+      </div>
+    </div>
+
+    <div class="work-grid is-showcase-view">
+      <canvas id="work-gl" aria-hidden="true"></canvas>
+
+      <article class="proj card" data-category="web" data-title="AKKHARIK" data-subtitle="Signage, Branding & Event Fabrication Experience" data-desc="Corporate website for a signage, branding and event-management business." data-brief="Akkharik required a high-impact corporate web portal to showcase extensive enterprise signage, retail branding, ACP fabrications, and corporate event installations. Scripters engineered a sleek dark-themed visual experience highlighting architectural craftsmanship, physical scale, and multi-service capabilities." data-tech="Next.js, React, Tailwind CSS, Responsive Design, Vercel" data-live="https://akkharik1.vercel.app/" data-github="https://github.com/Dibyo1/AKKHARIK1/tree/main" data-badge="Web Architecture" data-img="work/akkharik.webp">
+        <a class="proj-hit" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"></a>
+        <div class="mediaWrap">
+          <button class="proj-inspect-btn" type="button" aria-label="Inspect Akkharik project details">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            <span>Quick View</span>
+          </button>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-c" src="work/akkharik.webp" width="1600" height="849" alt="Screenshot of the Akkharik website home page: a dark hero with a headline about retail signage, ACP branding, corporate events and outdoor." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">01</span>
+            <span class="cat" data-cat="WEB • DESIGN • DEVELOPMENT">WEB • DESIGN • DEVELOPMENT</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" data-title="AKKHARIK">AKKHARIK<span class="sr"> (opens in a new tab)</span></a>
+          </h3>
+          <p class="desc">Corporate website for a signage, branding and event-management business.</p>
+          <div class="proj-tech-stack" aria-label="Technologies used">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Corporate CMS</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗<span class="sr"> for Akkharik (opens in a new tab)</span></a>
+            <a class="link-btn secondary" href="https://github.com/Dibyo1/AKKHARIK1/tree/main" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr"> repository for Akkharik (opens in a new tab)</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="web" data-title="EVIA WEALTH" data-subtitle="Bespoke Wealth Management & High-Net-Worth Advisory" data-desc="A premium wealth-management web experience with a financial-services-focused visual identity." data-brief="Crafted for wealth advisory partners, Evia Wealth needed an understated luxury aesthetic that inspires trust and credibility among high-net-worth investors. Features gold-on-black typography, responsive portfolio structuring, and tailored financial consultation funnels." data-tech="Next.js, React, Tailwind CSS, FinTech UI, Vercel" data-live="https://evia-wealth-five.vercel.app/" data-github="https://github.com/Dibyo1/Evia_Wealth" data-badge="FinTech Portal" data-img="work/evia.webp">
+        <a class="proj-hit" href="https://evia-wealth-five.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"></a>
+        <div class="mediaWrap">
+          <button class="proj-inspect-btn" type="button" aria-label="Inspect Evia Wealth project details">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            <span>Quick View</span>
+          </button>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-c" src="work/evia.webp" width="1012" height="622" alt="Screenshot of the Evia Wealth website: a gold-on-black welcome screen reading Welcome to Evia Wealth, your trusted wealth partner." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">02</span>
+            <span class="cat" data-cat="FINTECH • WEB • DESIGN • DEVELOPMENT">FINTECH • WEB • DESIGN • DEVELOPMENT</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="https://evia-wealth-five.vercel.app/" target="_blank" rel="noopener noreferrer" data-title="EVIA WEALTH">EVIA WEALTH<span class="sr"> (opens in a new tab)</span></a>
+          </h3>
+          <p class="desc">A premium wealth-management web experience with a financial-services-focused visual identity.</p>
+          <div class="proj-tech-stack" aria-label="Technologies used">
+            <span class="tech-tag">FinTech UX</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Brand Identity</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="https://evia-wealth-five.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗<span class="sr"> for Evia Wealth (opens in a new tab)</span></a>
+            <a class="link-btn secondary" href="https://github.com/Dibyo1/Evia_Wealth" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr"> repository for Evia Wealth (opens in a new tab)</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="web" data-title="INSUREDRIVE" data-subtitle="Interactive Motor Insurance & Onboarding Architecture" data-desc="An illustrative motor-insurance platform concept featuring vehicle onboarding, policy comparison, renewal journeys and insurance information." data-brief="A streamlined digital motor insurance platform concept reducing friction in vehicle registration lookups, coverage selection, and policy renewal journeys with intuitive step-by-step onboarding." data-tech="React, Vite, Tailwind CSS, UX Prototyping, Vercel" data-live="https://gaddi-mera-buddy.vercel.app/" data-github="https://github.com/Soumadip190/GaddiMeraBuddy" data-badge="Product UI/UX" data-img="work/insuredrive.webp">
+        <a class="proj-hit" href="https://gaddi-mera-buddy.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"></a>
+        <div class="mediaWrap">
+          <button class="proj-inspect-btn" type="button" aria-label="Inspect InsureDrive project details">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            <span>Quick View</span>
+          </button>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-l" src="work/insuredrive.webp" width="1600" height="848" alt="Screenshot of the InsureDrive home page: a motor-insurance hero with a vehicle registration lookup and illustrative sample data." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">03</span>
+            <span class="cat" data-cat="PRODUCT • UI/UX • WEB DEVELOPMENT">PRODUCT • UI/UX • WEB DEVELOPMENT</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="https://gaddi-mera-buddy.vercel.app/" target="_blank" rel="noopener noreferrer" data-title="INSUREDRIVE">INSUREDRIVE<span class="sr"> (opens in a new tab)</span></a>
+          </h3>
+          <p class="desc">An illustrative motor-insurance platform concept featuring vehicle onboarding, policy comparison, renewal journeys and insurance information.</p>
+          <div class="proj-tech-stack" aria-label="Technologies used">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Insurance Journey</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="https://gaddi-mera-buddy.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗<span class="sr"> for Insuredrive (opens in a new tab)</span></a>
+            <a class="link-btn secondary" href="https://github.com/Soumadip190/GaddiMeraBuddy" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr"> repository for Insuredrive (opens in a new tab)</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="ai" data-title="TRAVELMIND" data-subtitle="Autonomous Multi-Agent Travel Intelligence System" data-desc="An AI-powered travel assistant using specialized agents for travel planning, weather, budget planning, cuisine recommendations, local guidance, travel conditions and safety awareness." data-brief="TravelMind leverages a coordinated swarm of specialized AI agents: a master itinerary coordinator, weather intelligence agent, local cuisine curator, and budget optimizer that collectively construct bespoke travel schedules tailored to personal preferences." data-tech="Agentic AI, Python, Multi-Agent Swarms, FastAPI, LangChain" data-live="https://github.com/travelmind402-tech/travel-mind" data-github="https://github.com/travelmind402-tech/travel-mind" data-badge="Agentic AI" data-img="work/travelmind.webp">
+        <a class="proj-hit" href="https://github.com/travelmind402-tech/travel-mind" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"></a>
+        <div class="mediaWrap">
+          <button class="proj-inspect-btn" type="button" aria-label="Inspect TravelMind project details">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            <span>Quick View</span>
+          </button>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-c" src="work/travelmind.webp" width="1600" height="845" alt="Screenshot of the TravelMind app: step one of a trip planner asking for destination city, country and travel dates." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">04</span>
+            <span class="cat" data-cat="AGENTIC AI • ENGINEERING • WEB APP">AGENTIC AI • ENGINEERING • WEB APP</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="https://github.com/travelmind402-tech/travel-mind" target="_blank" rel="noopener noreferrer" data-title="TRAVELMIND">TRAVELMIND<span class="sr"> (opens in a new tab)</span></a>
+          </h3>
+          <p class="desc">An AI-powered travel assistant using specialized agents for travel planning, weather, budget planning, cuisine recommendations, local guidance, travel conditions and safety awareness.</p>
+          <div class="proj-tech-stack" aria-label="Technologies used">
+            <span class="tech-tag">Agentic AI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">LLM Agents</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="https://github.com/travelmind402-tech/travel-mind" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr"> repository for Travelmind (opens in a new tab)</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="data" data-title="MF NAV AUTOMATION" data-subtitle="Financial Data Scraping & Automated Excel Intelligence" data-desc="A Python-powered mutual fund data workflow that collects NAV data, processes and cleans fund records, calculates investment returns and generates structured Excel reports." data-brief="Automated ETL pipeline scraping daily Net Asset Value (NAV) records from AMFI and mutual fund houses, executing data normalization and rolling return calculations, then rendering executive-grade Excel sheets with automated tab formatting." data-tech="Python, BeautifulSoup, OpenPyXL, Pandas, ETL Pipelines" data-live="" data-github="" data-badge="Python Automation" data-img="work/mf-nav.webp">
+        <div class="mediaWrap">
+          <button class="proj-inspect-btn" type="button" aria-label="Inspect MF NAV Automation project details">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            <span>Quick View</span>
+          </button>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-l" src="work/mf-nav.webp" width="1240" height="775" alt="Screenshot of the MF_NAV Excel workbook: the Master sheet listing scheme names, fund houses, categories, NAV and return columns, with Navigator, Last Updated and category sheet tabs." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">05</span>
+            <span class="cat" data-cat="DATA SCRAPING • CLEANING • AUTOMATION">DATA SCRAPING • CLEANING • AUTOMATION</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <span class="t" data-title="MF NAV AUTOMATION">MF NAV AUTOMATION</span>
+          </h3>
+          <p class="desc">A Python-powered mutual fund data workflow that collects NAV data, processes and cleans fund records, calculates investment returns and generates structured Excel reports.</p>
+          <div class="proj-tech-stack" aria-label="Technologies used">
+            <span class="tech-tag">Python ETL</span>
+            <span class="tech-tag">BeautifulSoup</span>
+            <span class="tech-tag">OpenPyXL</span>
+            <span class="tech-tag">Data Cleaning</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="design" data-pdf="work/aldenaire-partners.pdf" data-title="ALDENAIRE &amp; PARTNERS" data-subtitle="Social Media Banners, Posters &amp; Brand Campaign Creatives" data-desc="The banners and posters that we built for social media, and it also includes social media posts." data-brief="Creative marketing agency campaign poster designed for Aldenaire &amp; Partners. Combines structured geometric framing, high-contrast crimson and charcoal contrast, and executive photography tailored for social media campaigns and digital banners." data-tech="Poster Design, Social Media Post, Campaign Banner, Brand Creative" data-live="work/aldenaire-partners.pdf" data-live-label="Open Design PDF" data-github="" data-badge="Design &amp; Social" data-img="work/design-aldenaire.webp">
+        <a class="proj-hit" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Aldenaire & Partners Poster PDF"></a>
+        <div class="mediaWrap">
+          <a class="proj-inspect-btn proj-pdf-btn" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Aldenaire & Partners PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Open PDF ↗</span>
+          </a>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-mid" src="work/design-aldenaire.webp" width="1200" height="1200" alt="Creative Marketing Agency social media poster designed for Aldenaire &amp; Partners featuring bold crimson geometric framing and business photography." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">06</span>
+            <span class="cat" data-cat="DESIGN • SOCIAL MEDIA • BANNERS & POSTERS">DESIGN • SOCIAL MEDIA • BANNERS &amp; POSTERS</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" data-title="ALDENAIRE & PARTNERS">ALDENAIRE &amp; PARTNERS<span class="sr"> (opens PDF)</span></a>
+          </h3>
+          <p class="desc">The banners and posters that we built for social media, and it also includes social media posts.</p>
+          <div class="proj-tech-stack" aria-label="Design disciplines">
+            <span class="tech-tag">Poster Design</span>
+            <span class="tech-tag">Social Media Post</span>
+            <span class="tech-tag">Campaign Banner</span>
+            <span class="tech-tag">Brand Creative</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗<span class="sr"> for Aldenaire &amp; Partners</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="design" data-pdf="work/jj-works.pdf" data-title="JJ WORKS" data-subtitle="Architectural Preservation Social Poster &amp; Campaign Banner" data-desc="Social media poster and appointment-booking campaign banner designed for JJ Works historic structure preservation." data-brief="Produced as part of our social media banner and poster series for JJ Works. Pairs crisp sans-serif hierarchy with on-site structural restoration photography and a dedicated steel-blue appointment banner." data-tech="Poster Design, Social Media, Editorial Layout, Brand Identity" data-live="work/jj-works.pdf" data-live-label="Open Design PDF" data-github="" data-badge="Design &amp; Social" data-img="work/design-jjworks.webp">
+        <a class="proj-hit" href="work/jj-works.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open JJ Works Poster PDF"></a>
+        <div class="mediaWrap">
+          <a class="proj-inspect-btn proj-pdf-btn" href="work/jj-works.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open JJ Works PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Open PDF ↗</span>
+          </a>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-mid" src="work/design-jjworks.webp" width="1200" height="1200" alt="JJ Works social media banner reading Preserve your historic structure over scaffolding restoration photography." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">07</span>
+            <span class="cat" data-cat="DESIGN • SOCIAL POST • BRAND CAMPAIGN">DESIGN • SOCIAL POST • BRAND CAMPAIGN</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="work/jj-works.pdf" target="_blank" rel="noopener noreferrer" data-title="JJ WORKS">JJ WORKS<span class="sr"> (opens PDF)</span></a>
+          </h3>
+          <p class="desc">Social media poster and appointment-booking campaign banner designed for JJ Works historic structure preservation.</p>
+          <div class="proj-tech-stack" aria-label="Design disciplines">
+            <span class="tech-tag">Poster Design</span>
+            <span class="tech-tag">Social Media</span>
+            <span class="tech-tag">Editorial Layout</span>
+            <span class="tech-tag">Brand Identity</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="work/jj-works.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗<span class="sr"> for JJ Works</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="proj card" data-category="design" data-pdf="work/mindspire-academy.pdf" data-title="MINDSPIRE ACADEMY" data-subtitle="Educational Test Series Flyer &amp; Social Media Poster" data-desc="Promotional campaign poster and informational flyer built for social media outreach across competitive exam preparation bundles." data-brief="Structured promotional poster for Mindspire Academy's Test Series campaign, organizing six exam track bundles, pricing callouts, and regional contact details into a clear visual hierarchy for social feeds and print." data-tech="Flyer Design, Social Media, Information Design, Campaign Creative" data-live="work/mindspire-academy.pdf" data-live-label="Open Design PDF" data-github="" data-badge="Design &amp; Social" data-img="work/design-mindspire.webp">
+        <a class="proj-hit" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Mindspire Academy Poster PDF"></a>
+        <div class="mediaWrap">
+          <a class="proj-inspect-btn proj-pdf-btn" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Mindspire Academy PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Open PDF ↗</span>
+          </a>
+          <div class="media"><div class="inner"><div class="zoom">
+            <img class="pos-mid" src="work/design-mindspire.webp" width="1200" height="1200" alt="Mindspire Academy promotional test series poster listing six competitive exam bundles and campus contact details." loading="eager" decoding="async">
+          </div></div></div>
+        </div>
+        <div class="cap">
+          <div class="cap-top">
+            <span class="n">08</span>
+            <span class="cat" data-cat="DESIGN • PROMOTIONAL POSTER • FLYER">DESIGN • PROMOTIONAL POSTER • FLYER</span>
+          </div>
+          <h3>
+            <svg class="arr-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <a class="t" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" data-title="MINDSPIRE ACADEMY">MINDSPIRE ACADEMY<span class="sr"> (opens PDF)</span></a>
+          </h3>
+          <p class="desc">Promotional campaign poster and informational flyer built for social media outreach across competitive exam preparation bundles.</p>
+          <div class="proj-tech-stack" aria-label="Design disciplines">
+            <span class="tech-tag">Flyer Design</span>
+            <span class="tech-tag">Social Media</span>
+            <span class="tech-tag">Information Design</span>
+            <span class="tech-tag">Campaign Creative</span>
+          </div>
+          <p class="links">
+            <a class="link-btn primary" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗<span class="sr"> for Mindspire Academy</span></a>
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Interactive Project Modal Overlay -->
+    <div id="work-modal" class="work-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-dialog" data-lenis-prevent>
+        <button class="modal-close-btn" type="button" aria-label="Close project preview" data-close-modal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-media">
+            <img id="modal-img" src="" alt="Project screenshot preview">
+            <span class="modal-media-badge" id="modal-badge"></span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-meta">
+              <span class="modal-num" id="modal-num">01</span>
+              <span class="modal-divider">/</span>
+              <span class="modal-cat" id="modal-cat">CATEGORY</span>
+            </div>
+            <h3 class="modal-title" id="modal-title">PROJECT TITLE</h3>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+            <p class="modal-desc" id="modal-desc"></p>
+            
+            <div class="modal-deepdive">
+              <h4>ENGINEERING &amp; DESIGN BRIEF</h4>
+              <p class="modal-brief" id="modal-brief"></p>
+            </div>
+            
+            <div class="modal-tech-wrap">
+              <h4>STACK &amp; CRAFT</h4>
+              <div class="modal-tech" id="modal-tech"></div>
+            </div>
+            
+            <div class="modal-actions" id="modal-actions">
+              <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="modal-btn primary">
+                <span id="modal-live-text">Launch Live Project</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+              <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="modal-btn secondary">
+                <span>GitHub Repository</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Screen Poster PDF Viewer Overlay -->
+    <div id="pdf-modal" class="work-modal pdf-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pdf-modal-title">
+      <div class="modal-backdrop" data-close-pdf></div>
+      <div class="pdf-modal-dialog" data-lenis-prevent>
+        <div class="pdf-modal-header">
+          <div class="pdf-modal-title-group">
+            <span class="pdf-modal-tag">POSTER PDF DOCUMENT</span>
+            <h3 id="pdf-modal-title" class="pdf-modal-title">Poster Preview</h3>
+          </div>
+          <div class="pdf-modal-controls">
+            <a id="pdf-download-link" href="work/aldenaire-partners.pdf" download="aldenaire-partners.pdf" class="modal-btn secondary">
+              <span>Download PDF</span>
+            </a>
+            <a id="pdf-newtab-link" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" class="modal-btn primary">
+              <span>Open in New Tab ↗</span>
+            </a>
+            <button class="modal-close-btn pdf-close-btn" type="button" aria-label="Close PDF viewer" data-close-pdf>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="pdf-modal-stage" id="pdf-modal-stage">
+          <div class="pdf-modal-status" id="pdf-modal-status" aria-live="polite">
+            <div class="pdf-status-spinner" id="pdf-status-spinner" aria-hidden="true"></div>
+            <p class="pdf-status-text" id="pdf-status-text">Loading PDF document…</p>
+            <div class="pdf-progress-track" id="pdf-progress-track" aria-hidden="true">
+              <div class="pdf-progress-fill" id="pdf-progress-fill"></div>
+            </div>
+            <div class="pdf-status-actions" id="pdf-status-actions" hidden>
+              <a id="pdf-status-open-btn" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" class="modal-btn primary">Open PDF in New Tab ↗</a>
+              <a id="pdf-status-download-btn" href="work/aldenaire-partners.pdf" download="aldenaire-partners.pdf" class="modal-btn secondary">Download PDF</a>
+            </div>
+          </div>
+          <div id="pdf-canvas-container" class="pdf-canvas-container" data-lenis-prevent hidden></div>
+          <iframe id="pdf-viewer-frame" class="pdf-viewer-frame" src="about:blank" title="Poster PDF Document Viewer"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" class="brands-section" aria-labelledby="brands-title">
+    <div class="brands-head">
+      <h2 id="brands-title" class="brands-title">BRANDS WE HAVE WORKED WITH</h2>
+      <p class="brands-sub">TRUSTED BY FORWARD-THINKING BRANDS,<br>ENTERPRISES, AND AMBITIOUS TEAMS.</p>
+    </div>
+
+    <div class="brands-marquee-stage" aria-label="Featured client brands: Evia Wealth, Akkharik, Aldenaire &amp; Partners, and Mindspire Academy">
+      <!-- Row 1: moves left -->
+      <div class="brands-row">
+        <div class="brands-track track-left">
+          <a class="brand-item" href="https://eviawealth.com" target="_blank" rel="noopener noreferrer" aria-label="Evia Wealth — Your Wealth Artist">
+            <img src="work/evia-wealth-logo.png" alt="Evia Wealth — Your Wealth Artist logo" width="695" height="268" loading="eager" fetchpriority="high" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Akkharik — BTL, Events &amp; OOH">
+            <img src="work/akkharik-logo.png" alt="Akkharik — Journey begins here logo" width="800" height="283" loading="eager" fetchpriority="high" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Aldenaire &amp; Partners — Digital Marketing Agency">
+            <img src="work/aldenaire-partners-logo.png" alt="Aldenaire &amp; Partners logo" width="800" height="221" loading="eager" fetchpriority="high" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Mindspire Academy">
+            <img src="work/mindspire-academy-logo.png" alt="Mindspire Academy logo" width="318" height="248" loading="eager" fetchpriority="high" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://eviawealth.com" target="_blank" rel="noopener noreferrer" aria-label="Evia Wealth — Your Wealth Artist">
+            <img src="work/evia-wealth-logo.png" alt="Evia Wealth — Your Wealth Artist logo" width="695" height="268" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Akkharik — BTL, Events &amp; OOH">
+            <img src="work/akkharik-logo.png" alt="Akkharik — Journey begins here logo" width="800" height="283" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Aldenaire &amp; Partners — Digital Marketing Agency">
+            <img src="work/aldenaire-partners-logo.png" alt="Aldenaire &amp; Partners logo" width="800" height="221" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Mindspire Academy">
+            <img src="work/mindspire-academy-logo.png" alt="Mindspire Academy logo" width="318" height="248" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://eviawealth.com" target="_blank" rel="noopener noreferrer" aria-label="Evia Wealth — Your Wealth Artist" aria-hidden="true" tabindex="-1">
+            <img src="work/evia-wealth-logo.png" alt="" width="695" height="268" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Akkharik — BTL, Events &amp; OOH" aria-hidden="true" tabindex="-1">
+            <img src="work/akkharik-logo.png" alt="" width="800" height="283" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Aldenaire &amp; Partners — Digital Marketing Agency" aria-hidden="true" tabindex="-1">
+            <img src="work/aldenaire-partners-logo.png" alt="" width="800" height="221" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Mindspire Academy" aria-hidden="true" tabindex="-1">
+            <img src="work/mindspire-academy-logo.png" alt="" width="318" height="248" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://eviawealth.com" target="_blank" rel="noopener noreferrer" aria-label="Evia Wealth — Your Wealth Artist" aria-hidden="true" tabindex="-1">
+            <img src="work/evia-wealth-logo.png" alt="" width="695" height="268" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="https://akkharik1.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Akkharik — BTL, Events &amp; OOH" aria-hidden="true" tabindex="-1">
+            <img src="work/akkharik-logo.png" alt="" width="800" height="283" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/aldenaire-partners.pdf" target="_blank" rel="noopener noreferrer" aria-label="Aldenaire &amp; Partners — Digital Marketing Agency" aria-hidden="true" tabindex="-1">
+            <img src="work/aldenaire-partners-logo.png" alt="" width="800" height="221" loading="eager" decoding="sync">
+          </a>
+          <a class="brand-item" href="work/mindspire-academy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Mindspire Academy" aria-hidden="true" tabindex="-1">
+            <img src="work/mindspire-academy-logo.png" alt="" width="318" height="248" loading="eager" decoding="sync">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="clients-word-wrap" id="clients-word-wrap" aria-label="Clients">
+      <div class="clients-word" data-text="CLIENTS">CLIENTS</div>
+    </div>
+  </section>
+
+
+  <section id="team" class="team-experience" aria-label="Meet the Scripters co-founders">
+    <div class="team-shell">
+      <div class="team-topline"><span class="team-brand">SCRIPTERS / PEOPLE</span><span class="team-counter" aria-live="polite">01 — 03</span></div>
+      <div class="team-copy">
+        <p class="eyebrow">The people behind the work</p>
+        <h2>TEAM<span class="team-period">.</span></h2>
+        <p class="team-note">Three minds. One studio.<br>Building what comes next.</p>
+      </div>
+      <div class="team-visual">
+        <canvas id="team-canvas" aria-hidden="true"></canvas>
+        <div class="team-scanline" aria-hidden="true"></div>
+        <div class="team-image-fallback" aria-hidden="true">
+          <img src="team/rohit-biswas.jpeg" alt="">
+        </div>
+      </div>
+      <div class="team-person" data-person="0">
+        <span class="team-index">01 / FOUNDERS</span>
+        <h3>Rohit Biswas</h3><p>Co-Founder</p>
+      </div>
+      <div class="team-person" data-person="1">
+        <span class="team-index">02 / FOUNDERS</span>
+        <h3>Dibyajyoti Biswas</h3><p>Co-Founder</p>
+      </div>
+      <div class="team-person" data-person="2">
+        <span class="team-index">03 / FOUNDERS</span>
+        <h3>Shuvayu Niyogi</h3><p>Co-Founder</p>
+      </div>
+      <div class="team-bottomline">
+        <div class="team-pagination" role="group" aria-label="Choose a co-founder">
+          <button class="team-dot is-active" type="button" data-team-go="0" aria-label="Show Rohit Biswas" aria-current="true"><span>01</span></button>
+          <button class="team-dot" type="button" data-team-go="1" aria-label="Show Dibyajyoti Biswas"><span>02</span></button>
+          <button class="team-dot" type="button" data-team-go="2" aria-label="Show Shuvayu Niyogi"><span>03</span></button>
+        </div>
+        <span class="team-progress"><i></i></span>
+        <span class="team-scroll-label">USE ARROW TO EXPLORE</span>
+      </div>
+      <button class="team-prev" type="button" aria-label="Show previous co-founder">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button class="team-next" type="button" aria-label="Show next co-founder">
+        <span aria-hidden="true">→</span>
+      </button>
+      <div class="team-description" aria-live="polite">Building thoughtful digital experiences across web, AI and data.</div>
+    </div>
+    <div class="team-sources" aria-hidden="true">
+      <img data-team-source="0" src="team/rohit-biswas.jpeg" alt="">
+      <img data-team-source="1" src="team/dibyajyoti-biswas.jpeg" alt="">
+      <img data-team-source="2" src="team/shuvayu-niyogi.jpeg" alt="">
+    </div>
+  </section>
+
+  <footer id="contact" class="wrap">
+    <h2 class="big">Let’s make<br>something <em>loud.</em></h2>
+    <a class="mail" href="mailto:scripterscreation@gmail.com">scripterscreation@gmail.com</a>
+    <p class="phones"><a href="tel:+918159066754">8159066754</a> · <a href="tel:+919434616472">9434616472</a></p>
+    <small>© 2026 Scripters</small>
+  </footer>
+  <svg class="swoosh" id="line-a" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gAura" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="rgba(74,108,178,0.005)"/>
+        <stop offset="0.06" stop-color="rgba(74,108,178,0.038)"/>
+        <stop offset="0.50" stop-color="rgba(74,108,178,0.025)"/>
+        <stop offset="0.90" stop-color="rgba(74,108,178,0.032)"/>
+        <stop offset="1" stop-color="rgba(74,108,178,0.005)"/>
+      </linearGradient>
+      <linearGradient id="gA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="rgba(143,157,182,0.015)"/>
+        <stop offset="0.06" stop-color="rgba(234,228,216,0.072)"/>
+        <stop offset="0.48" stop-color="rgba(176,190,218,0.054)"/>
+        <stop offset="0.88" stop-color="rgba(234,228,216,0.062)"/>
+        <stop offset="1" stop-color="rgba(143,157,182,0.015)"/>
+      </linearGradient>
+    </defs>
+    <path class="swoosh-aura" stroke="url(#gAura)"/>
+    <path class="swoosh-main" stroke="url(#gA)"/>
+  </svg>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="media.config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
