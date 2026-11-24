@@ -49,6 +49,7 @@ for (const file of rootFiles) {
 
 // Copy every required asset directory recursively.
 const assetDirs = [
+  'assets',
   'frames',
   'team',
   'work'

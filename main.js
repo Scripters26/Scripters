@@ -3,6 +3,53 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 
 const IS_MOBILE = window.matchMedia("(max-width: 760px), (pointer: coarse)").matches;
 
+/* ---------- subtle synthesized click audio feedback ---------- */
+let sharedAudioCtx = null;
+let lastClickSoundAt = -1e9;
+function playClickSound() {
+  const now = performance.now();
+  if (now - lastClickSoundAt < 45) return;
+  lastClickSoundAt = now;
+  try {
+    if (!sharedAudioCtx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) sharedAudioCtx = new AudioCtx();
+    }
+    if (sharedAudioCtx && sharedAudioCtx.state === "suspended") sharedAudioCtx.resume();
+    if (sharedAudioCtx) {
+      const t = sharedAudioCtx.currentTime;
+      const osc = sharedAudioCtx.createOscillator();
+      const gain = sharedAudioCtx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(520, t);
+      osc.frequency.exponentialRampToValueAtTime(260, t + 0.03);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.linearRampToValueAtTime(0.014, t + 0.0025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
+      osc.connect(gain);
+      gain.connect(sharedAudioCtx.destination);
+      osc.start(t);
+      osc.stop(t + 0.032);
+    }
+  } catch (_) {}
+}
+
+document.addEventListener(
+  "click",
+  (e) => {
+    if (!e.isTrusted) return;
+    const target = e.target;
+    if (!target || typeof target.closest !== "function") return;
+    if (target.closest(".logo")) return;
+    const btn = target.closest(
+      'button, [role="button"], header.nav nav a, .cta, .proj-inspect-btn, .link-btn, .modal-btn, .proj-hit, .proj .cap h3 a.t, footer#contact a'
+    );
+    if (!btn || btn.disabled || btn.getAttribute("aria-disabled") === "true") return;
+    playClickSound();
+  },
+  true
+);
+
 /* ---------- smooth scroll (Lenis) ---------- */
 const lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 1.15, syncTouch: false });
 lenis.on("scroll", ScrollTrigger.update);
@@ -1285,31 +1332,6 @@ function initWorkInteractions() {
   const countEl = document.getElementById("work-visible-count");
   const modal = document.getElementById("work-modal");
 
-  // Subtle synthesized audio feedback
-  let audioCtx = null;
-  const playClickSound = () => {
-    try {
-      if (!audioCtx) {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (AudioCtx) audioCtx = new AudioCtx();
-      }
-      if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
-      if (audioCtx) {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(580, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(240, audioCtx.currentTime + 0.035);
-        gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.035);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.038);
-      }
-    } catch (_) {}
-  };
-
   // Sliding active pill & hover ghost pill inside .work-filter-tabs
   const movePillTo = (targetEl, tabEl, immediate = false) => {
     if (!targetEl || !tabEl || !tabsWrap) return;
@@ -1851,6 +1873,7 @@ function initWorkInteractions() {
 
     pdfModal.classList.add("is-open");
     pdfModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("has-modal-open");
     document.body.style.overflow = "hidden";
     if (typeof lenis !== "undefined" && lenis) lenis.stop();
 
@@ -1944,6 +1967,9 @@ function initWorkInteractions() {
     }
     pdfModal.classList.remove("is-open");
     pdfModal.setAttribute("aria-hidden", "true");
+    if (!modal || !modal.classList.contains("is-open")) {
+      document.body.classList.remove("has-modal-open");
+    }
     setTimeout(() => {
       if (!pdfModal.classList.contains("is-open")) {
         if (pdfFrame) pdfFrame.src = "about:blank";
@@ -2044,6 +2070,7 @@ function initWorkInteractions() {
 
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("has-modal-open");
       document.body.style.overflow = "hidden";
       if (typeof lenis !== "undefined" && lenis) lenis.stop();
     };
@@ -2062,6 +2089,9 @@ function initWorkInteractions() {
       playClickSound();
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
+      if (!pdfModal || !pdfModal.classList.contains("is-open")) {
+        document.body.classList.remove("has-modal-open");
+      }
       document.body.style.overflow = "";
       if (typeof lenis !== "undefined" && lenis) lenis.start();
     };
