@@ -327,7 +327,6 @@ function initStory() {
    Until a card's texture is uploaded AND a probe render succeeds, its DOM image stays
    visible; on any failure (no WebGL2, context loss, slow device) cards fall back to the
    original DOM images. */
-/* GL:BEGIN */
 /* Single tunable configuration for Featured Work WebGL2 curvy scroll & curved bloom */
 const WORK_GL_CONFIG = {
   bendScale: 1.0,      // Single master multiplier to tune all scroll-bend displacements with one number
@@ -566,9 +565,8 @@ void main(){
   };
 
   const dropResources = () => { cards.forEach((c) => { c.tex = null; setReady(c, false); }); };
-  const failAll = (why) => {
+  const failAll = () => {
     enabled = false; dropResources(); vel = 0; velV = 0;
-    console.info("[work-gl] falling back to the original DOM images (" + why + ")"); /* DIAG */
     status("fallback");
   };
   const degrade = () => {
@@ -593,7 +591,7 @@ void main(){
       const onLoaded = () => {
         const done = () => {
           if (c.img.naturalWidth > 0) { o.imgReady = true; dirty = true; }
-          else { o.failed = true; console.info(`[work-gl] card "${o.title}" fell back to DOM: naturalWidth is 0`); /* DIAG */ }
+          else { o.failed = true; }
         };
         if (c.img.decode) c.img.decode().then(done, done); else done();
       };
@@ -603,7 +601,6 @@ void main(){
         c.img.addEventListener("load", onLoaded, { once: true });
         c.img.addEventListener("error", () => {
           o.failed = true;
-          console.info(`[work-gl] card "${o.title}" fell back to DOM: image error event`); /* DIAG */
         }, { once: true });
       }
       return o;
@@ -731,14 +728,12 @@ void main(){
   const c_ok = (c, sy) => {
     if (!uploadTexture(c)) {
       c.failed = true; c.tex = null;
-      console.info(`[work-gl] card "${c.title}" fell back to DOM: texture upload failed`); /* DIAG */
       return false;
     }
     // Only run the synchronous gl.readPixels FBO probe once to verify the GPU pipeline works, avoiding repeated GPU pipeline stalls
     if (!probeVerified) {
       if (!probe(c)) {
         gl.deleteTexture(c.tex); c.tex = null; c.failed = true;
-        console.info(`[work-gl] card "${c.title}" fell back to DOM: offscreen probe render failed`); /* DIAG */
         return false;
       }
       probeVerified = true;
@@ -747,14 +742,6 @@ void main(){
       measureCard(c, sy !== undefined ? sy : window.scrollY);
     }
     c.ready = true;
-    if (!c._loggedReady) {
-      c._loggedReady = true;
-      console.info(`[work-gl] card ready: "${c.title}" (${c.img.naturalWidth}x${c.img.naturalHeight})`); /* DIAG */
-      const readyCount = cards.filter((x) => x.ready).length;
-      if (readyCount === cards.length) {
-        console.info(`[work-gl] all ${readyCount}/${cards.length} cards ready (active path: WebGL2)`); /* DIAG */
-      }
-    }
     if (cards.every((x) => x.failed)) failAll("no card could be rendered");
     return true;
   };
@@ -809,7 +796,7 @@ void main(){
   canvas.addEventListener("webglcontextlost", (e) => {
     e.preventDefault(); lost = true; prog = null; dropResources(); status("lost");
     clearTimeout(restoreTimer);
-    restoreTimer = setTimeout(() => { if (lost) { console.info("[work-gl] context not restored; DOM images stay in use"); status("fallback"); } }, 4000);
+    restoreTimer = setTimeout(() => { if (lost) { status("fallback"); } }, 4000);
   });
   canvas.addEventListener("webglcontextrestored", () => {
     clearTimeout(restoreTimer); lost = false; prog = null; R._checked = false;
@@ -818,9 +805,7 @@ void main(){
   R.destroy = () => { clearTimeout(restoreTimer); enabled = false; dropResources(); };
   return R;
 }
-/* GL:END */
 
-/* REEL:BEGIN */
 // Arcade/bingo title reel. Every character is a clipped column holding two REAL letters from the same title:
 // a neighbouring letter, then the correct one. The drum rolls upward: blank -> neighbour letter (held, readable)
 // -> final letter. At rest (no transform) the final letter is showing, so the title is always readable even if
@@ -856,7 +841,6 @@ function buildTitleReels(titleEl, rawTitle) {
   });
   return { drums, count: n };
 }
-/* REEL:END */
 
 /* ---------- featured work: editorial grid + organic section lines ----------
    One system, built inside gsap.matchMedia so breakpoint / reduced-motion changes
@@ -1058,15 +1042,12 @@ function initWork() {
     try { return !!(glCanvas && window.WebGL2RenderingContext && glCanvas.getContext("webgl2", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false })); }
     catch (_) { return false; }
   })();
-  console.info("[work-gl] WebGL2 created:", hasGL2); /* DIAG */
   const renderer = hasGL2 ? createWorkGL(glCanvas, (s) => {
     work.dataset.gl = s;
     work.classList.toggle("gl-on", s === "on");
-    console.info(`[work-gl] work.dataset.gl = "${s}" (active path: ${s === "on" ? "WebGL2" : "DOM fallback"})`); /* DIAG */
   }) : null;
   if (!hasGL2) {
     work.dataset.gl = "fallback";
-    console.info('[work-gl] work.dataset.gl = "fallback" (reason: WebGL2 context unavailable)'); /* DIAG */
   }
   work._glRenderer = renderer;
   if (renderer) {
@@ -1135,7 +1116,6 @@ function initWork() {
 
     if (calm) {
       animating = false;
-      console.info("[work-gl] prefers-reduced-motion active; disabling WebGL2 and using static DOM images"); /* DIAG */
       renderer && renderer.disable();
       setRibbonOffset(A, 0);
       projMeta.forEach((m) => {
