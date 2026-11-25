@@ -730,7 +730,7 @@ main#top:nth-of-type(1) > section#work:nth-of-type(3) > div:nth-of-type(2) > art
   color:var(--fg);
   font-family:"Cormorant Garamond",Georgia,serif;
   font-weight:400;
-  padding:clamp(110px,16vh,180px) 0 clamp(60px,10vh,110px);
+  padding:clamp(90px,13vh,150px) 0 clamp(90px,13vh,150px);
   overflow-x:clip;
 }
 .brands-head{
@@ -739,13 +739,13 @@ main#top:nth-of-type(1) > section#work:nth-of-type(3) > div:nth-of-type(2) > art
   justify-content:space-between;
   gap:32px;
   padding:0 4vw;
-  margin-bottom:clamp(64px,10vh,116px);
+  margin-bottom:clamp(48px,7.5vh,88px);
 }
 .brands-title{
-  font-size:clamp(30px,3.8vw,58px);
+  font-size:clamp(22px,2.5vw,38px);
   font-weight:500;
   letter-spacing:-.01em;
-  line-height:1.04;
+  line-height:1.08;
   text-transform:uppercase;
   color:var(--fg);
 }
@@ -830,8 +830,9 @@ main#top:nth-of-type(1) > section#work:nth-of-type(3) > div:nth-of-type(2) > art
 .clients-word-wrap{
   position:relative;
   width:100%;
-  margin-top:clamp(68px,11vh,130px);
-  padding:18px 5vw 10px;
+  margin-top:-2cm;
+  margin-bottom:clamp(56px,9vh,108px);
+  padding:10px 5vw 14px;
   box-sizing:border-box;
   display:flex;
   align-items:center;
@@ -885,11 +886,11 @@ main#top:nth-of-type(1) > section#work:nth-of-type(3) > div:nth-of-type(2) > art
 }
 
 @media(max-width:700px){
-  .brands-head{flex-direction:column;gap:14px;margin-bottom:48px}
+  .brands-head{flex-direction:column;gap:14px;margin-bottom:36px}
   .brands-sub{text-align:left;max-width:100%}
   .brands-marquee-stage{gap:36px}
   .brand-item img{height:46px;max-width:150px}
-  .clients-word-wrap{padding:12px 4vw 4px;margin-top:52px}
+  .clients-word-wrap{padding:6px 4vw 10px;margin-top:-2cm;margin-bottom:40px}
   .clients-word{font-size:clamp(40px,14.4vw,102px);letter-spacing:.01em}
 }
 
